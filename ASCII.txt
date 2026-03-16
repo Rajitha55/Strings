@@ -1,0 +1,19 @@
+//Program to convert a character into ASCII
+//'A'= 65, 'a'= 97, '0'= 48
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void ascii(char ch)
+{
+    cout<<"ASCII value of "<<ch<<"= "<<int(ch);
+}
+
+int main()
+{
+    char ch;
+    cout<<"Enter a character:"<<endl;
+    cin>>ch;
+    ascii(ch);
+    return 0;
+}
