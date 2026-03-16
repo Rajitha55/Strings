@@ -1,0 +1,25 @@
+//Program to Remove Brackets from a given Algebraic expression
+
+#include <bits/stdc++.h>
+using namespace std;
+
+string remove_brackets(string s)
+{
+    string res;
+    for(char ch:s)
+    {
+        if(ch!='(' && ch!=')')
+          res+=ch;
+    }
+    return res;
+}
+
+int main()
+{
+    string exp;
+    cout<<"Enter Algebraic expression:"<<endl;
+    getline(cin,exp);
+    string res= remove_brackets(exp);
+    cout<<res;
+    return 0;
+}
