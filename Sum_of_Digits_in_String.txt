@@ -1,0 +1,41 @@
+//Program to print sum of all numbers in a given String
+//NOTE: multiple consecutive numbers will be considered as a single number
+//isgigit(ch), isalpha(ch), isalnum(s), isspace(ch), isupper(ch), islower(s)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int digit_sum(string s)
+{
+    int sum=0;
+    string tempdig="";
+    
+    for(char ch:s)
+    {
+        if(isdigit(ch))
+           tempdig+=ch;
+        else
+        {
+            if(!tempdig.empty())
+            {
+                sum+=stoi(tempdig);
+                tempdig="";
+            }
+        }
+    }
+    if(!tempdig.empty())
+        {
+            sum+=stoi(tempdig);
+        }
+    return sum;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter an Alphanumerical string:"<<endl;
+    getline(cin,s);
+    int sum=digit_sum(s);
+    cout<<"Sum of digits in given ALphanumerical string= "<<sum;
+    return 0;
+}
