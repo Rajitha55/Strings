@@ -1,0 +1,41 @@
+//Program to check whether a given string is Palindrome or not
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool palindrome(string s)
+{
+    int start=0,end=s.length()-1;
+    while(start<end)
+    {
+        if(s[start] != s[end])
+           return false;
+        start++;
+        end--;
+    }
+    return true;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter a String:"<<endl;
+    cin>>s;
+    if(palindrome(s))
+       cout<<"Palindrome";
+    else
+       cout<<"Not a Palindrome";
+    return 0;
+}
+
+
+//Below is using Recursion
+
+bool palindrome(int i,string s)
+{
+    if(i>=s.length()/2)
+       return true;
+    if(s[i] != s[s.length()-i-1])
+       return false;
+    return palindrome(i+1,s);
+}
