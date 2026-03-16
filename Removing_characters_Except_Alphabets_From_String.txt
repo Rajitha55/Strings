@@ -1,0 +1,26 @@
+//Program to remove characters except Alphabets from a given String
+
+#include <bits/stdc++.h>
+using namespace std;
+
+string remove_char(string s)
+{
+    string res="";
+    for(char ch:s)
+    {
+        if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z'))
+           res+=ch;
+    }
+    return res;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter a String:"<<endl;
+    getline(cin,s);
+    string res=remove_char(s);
+    cout<<"String after removing characters except Alphabets:"<<endl;
+    cout<<res;
+    return 0;
+}
