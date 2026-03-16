@@ -1,0 +1,28 @@
+//Program to Remove all vowels from given string
+
+#include <bits/stdc++.h>
+using namespace std;
+
+string remove_vowel(string s)
+{
+    string res;
+    for(char ch: s)
+    {
+        if(ch=='a' || ch=='A' || ch=='e' || ch=='E' || ch=='i' || ch=='I' || ch=='o' || ch=='O' || ch=='u' || ch=='U')
+           continue;
+        else
+           res+=ch;
+    }
+    return res;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter string:"<<endl;
+    getline(cin,s);
+    string res=remove_vowel(s);
+    cout<<"String after removing all vowels:"<<endl;
+    cout<<res;
+    return 0;
+}
