@@ -1,0 +1,28 @@
+//Program to Remove white spaces from a given string
+
+#include <bits/stdc++.h>
+using namespace std;
+
+string remove_space(string s)
+{
+    string res="";
+    for(char ch:s)
+    {
+        if(ch == ' ' || ch == '\t' || ch == '\n')
+          continue;
+        else
+          res+=ch;
+    }
+    return res;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter string:"<<endl;
+    getline(cin,s);
+    string res=remove_space(s);
+    cout<<"String after removing spaces:"<<endl;
+    cout<<res;
+    return 0;
+}
