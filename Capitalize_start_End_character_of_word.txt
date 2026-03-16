@@ -1,0 +1,34 @@
+//Program to Capitalize first and last character of words in a given Sentence
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void capitalize(string &s)
+{
+    int n=s.length();
+    if(islower(s[0]))
+       toupper(s[0]);
+       
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]==' ')
+        {
+            if(islower(s[i-1]))
+               s[i-1]=toupper(s[i-1]);
+            if(islower(s[i+1]))
+               s[i+1]=toupper(s[i+1]);
+        }
+    }
+    if(islower(s[n-1]))
+       s[n-1]=toupper(s[n-1]);
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter any Sentence:"<<endl;
+    getline(cin,s);
+    capitalize(s);
+    cout<<s;
+    return 0;
+}
