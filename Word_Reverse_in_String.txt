@@ -1,0 +1,28 @@
+//Program to Reverse words in a string
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void word_reverse(string &s)
+{
+    reverse(s.begin(),s.end()); //first, reversing entire string
+    int start=0;
+    for(int i=0;i<=s.length();i++)
+    {
+        if(i==s.length() || s[i]==' ') //next, reversing each word
+        {
+            reverse(s.begin()+start,s.begin()+i);
+            start=i+1;
+        }
+    }
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter string:"<<endl;
+    getline(cin,s);
+    word_reverse(s);
+    cout<<s;
+    return 0;
+}
