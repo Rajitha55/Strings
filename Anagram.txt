@@ -1,0 +1,41 @@
+//Program to check if 2 given Stribgs are Anagram of each other
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool anagram(string s1, string s2)
+{
+    int n1=s1.length(), n2=s2.length();
+    if(n1!=n2)
+       return false;
+       
+    map<char,int>freq;
+    
+    for(char ch: s1)
+       freq[ch]++;
+    for(char ch:s2)
+       freq[ch]--;
+       
+    for(auto i:freq)
+    {
+        if(i.second != 0)
+           return false;
+    }
+    
+    return true;
+}
+
+int main()
+{
+    string s1,s2;
+    cout<<"Enter first String: ";
+    cin>>s1;
+    cout<<"\nEnter second String: ";
+    cin>>s2;
+    bool res=anagram(s1,s2);
+    if(res)
+       cout<<s1<<" and "<<s2<<" are Anagrams";
+    else
+       cout<<s1<<" and "<<s2<<" are not Anagrams";
+     return 0;
+}
