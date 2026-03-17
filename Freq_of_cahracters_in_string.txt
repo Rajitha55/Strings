@@ -1,0 +1,26 @@
+//Program to count frequency of each character in a given string
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void countfreq(string s)
+{
+    map<char,int>freq;
+    transform(s.begin(),s.end(),s.begin(),::tolower);
+    for(char ch:s)
+    {
+        if(ch!=' ')
+          freq[ch]++;
+    }
+    for(auto it:freq)
+       cout<<it.first<<" - "<<it.second<<endl;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter a String:"<<endl;
+    getline(cin,s);
+    countfreq(s);
+    return 0;
+}
