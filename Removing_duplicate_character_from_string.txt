@@ -1,0 +1,31 @@
+//Program to Remove duplicate characters from a String
+//Here, we are implementing this using unordered_set
+//set is container which stores unique elements in ascending order by default- set<data_type>name;
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void remove_dupes(string s)
+{
+    string res="";
+    unordered_set<char>ele;
+    
+    for(char ch:s)
+    {
+        if(ele.find(ch)==ele.end())
+        {
+            res+=ch;
+            ele.insert(ch);
+        }
+    }
+    cout<<res;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter string:"<<endl;
+    cin>>s;
+    remove_dupes(s);
+    return 0;
+}
