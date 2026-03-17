@@ -1,0 +1,31 @@
+//Program to Print Non-Repeating characters in a String
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void non_repeat(string s)
+{
+    map<char,int>freq;
+    for(char ch:s)
+    {
+        if(isupper(ch))
+           tolower(ch);
+        if(ch != ' ')
+           freq[ch]++;
+    }
+    
+    for(auto i: freq)
+    {
+        if(i.second == 1)
+           cout<<i.first<<endl;
+    }
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter any String:"<<endl;
+    getline(cin,s);
+    non_repeat(s);
+    return 0;
+}
