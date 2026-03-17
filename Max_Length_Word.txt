@@ -1,0 +1,40 @@
+//Program to Print Max length word in a given sentence
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void maxword(string s)
+{
+    int n=s.length();
+    int i=0,j=0; //i - start of each word, j-to traverse each char
+    int max_size=0,max_start=0;
+    
+    while(j<=n)
+    {
+        if(j<n and s[j]!=' ')
+           j++;
+           
+        else
+        {
+            int curr_size=j-i;
+            if(curr_size > max_size)
+            {
+                max_size=curr_size;
+                max_start=i;
+            }
+            j++;
+            i=j;
+        }
+    }
+    cout<<"Max length word: "<<s.substr(max_start,max_size)<<endl;
+    cout<<"Max length: "<<max_size;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter any Ssentance:"<<endl;
+    getline(cin,s);
+    maxword(s);
+    return 0;
+}
