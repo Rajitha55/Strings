@@ -1,0 +1,26 @@
+//Program to Print all duplicate characters in a String(which are occurring more than once) with their occurrences count
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void print_dupes(string s)
+{
+    map<char,int>freq;
+    for(char ch:s)
+       freq[ch]++;
+    
+    for(auto i:freq)
+    {
+        if(i.second>1)
+            cout<<i.first<<" "<<i.second<<endl;
+    }
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter string:"<<endl;
+    cin>>s;
+    print_dupes(s);
+    return 0;
+}
