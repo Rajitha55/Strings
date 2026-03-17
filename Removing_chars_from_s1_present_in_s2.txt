@@ -1,0 +1,31 @@
+//Program to remove characters from str1 which are present in str2
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void removechars(string s1, string s2)
+{
+    map<char,bool>mp;
+    string res="";
+    for(char ch:s2)
+       mp[ch]=true;
+    
+    for(char ch:s1)
+    {
+        if(!mp[ch])
+          res+=ch;
+    }
+    
+    cout<<res;
+}
+
+int main()
+{
+    string s1,s2;
+    cout<<"Enter str1: ";
+    cin>>s1;
+    cout<<"Enter str2: ";
+    cin>>s2;
+    removechars(s1,s2);
+    return 0;
+}
