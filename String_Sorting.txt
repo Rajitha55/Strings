@@ -1,0 +1,19 @@
+//Program to sort characters in the given string
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void sort_str(string s)
+{
+    sort(s.begin(), s.end());
+    cout<<s;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter a string:"<<endl;
+    getline(cin,s);
+    sort_str(s);
+    return 0;
+}
