@@ -1,0 +1,53 @@
+//Program to print a word in a given string that has the highest number of repeated letters. If not found, return -1.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void max_repeating_word(string s)
+{
+    int i=0,j=0,n=s.length();
+    int max_count=0,max_start=-1,max_length=0;
+    char max_char='\0';
+    string max_word="\0";
+    map<char,int>freq;
+    
+    while(j<=n)
+    {
+        if(j<n && s[j]!=' ')
+           j++;
+        else
+        {
+            for(int k=i;k<=j;k++)
+                freq[s[k]]++;
+            for(auto it:freq)    
+            {
+                if(it.second > max_count)
+                {
+                    max_count=it.second;
+                    max_char=it.first;
+                    max_start=i;
+                    max_length=j-i;
+                }
+            }
+            freq.clear();
+            j++;
+            i=j;
+        }
+    }
+    if(max_count > 1)
+    {
+    cout<<"Word with Maximum no.of repeatable characters is ";
+    cout<<s.substr(max_start,max_length)<<" with the character "<<max_char;
+    }
+    else 
+      cout<<"-1";
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter a sentence:"<<endl;
+    getline(cin,s);
+    max_repeating_word(s);
+    return 0;
+}
