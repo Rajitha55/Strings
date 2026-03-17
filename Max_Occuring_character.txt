@@ -1,0 +1,35 @@
+//Program to print Maximum no.of times occuring character in a given String
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void maxchar(string s)
+{
+    map<char,int>freq;
+    int max=0;
+    char res;
+    
+    for(char ch:s)
+    {
+       if(ch != ' ')    
+           freq[ch]++;
+    }   
+    for(auto i:freq)
+    {
+        if(i.second > max)
+        {
+            max=i.second;
+            res=i.first;
+        }
+    }
+    cout<<res<<" is occuring maximum times for "<<max<<" times.";
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter String:"<<endl;
+    getline(cin,s);
+    maxchar(s);
+    return 0;
+}
