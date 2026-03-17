@@ -1,0 +1,29 @@
+//Program to change case of each characyer in a given String
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void change_case(string &s)
+{
+    for(int i=0;i<s.length();i++)
+    {
+        if(s[i]!=' ')
+        {
+           if(islower(s[i]))
+              s[i]=toupper(s[i]);
+           else
+              s[i]=tolower(s[i]);
+        }
+    }
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter String:"<<endl;
+    getline(cin,s);
+    change_case(s);
+    cout<<"String after changing case:"<<endl;
+    cout<<s;
+    return 0;
+}
