@@ -1,0 +1,21 @@
+//Program to find index of substring in a given string
+//Here, we are using text.find(pattern) function
+//It returns index of the text if its found pattern. Otherwise, it returns string::npos (which means not found)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string text,pattern;
+    cout<<"Enter string text:"<<endl;
+    getline(cin,text);
+    cout<<"Enter pattern which you want to check:"<<endl;
+    getline(cin,pattern);
+    auto indx=text.find(pattern);
+    if(indx != string::npos)
+        cout<<pattern<<" found at the position "<<indx;
+    else
+        cout<<"-1";
+    return 0;
+}
